@@ -32,6 +32,19 @@ public class MaximumSubarraySum {
         System.out.println(maxi);
     }
 
+    public static void KadanesAlgo(int[] array) {
+        int n = array.length;
+        int currSum = array[0];
+        int maxSum = array[0];
+
+        for (int i = 1; i < n; i++) {
+
+            currSum = Math.max(array[i], currSum + array[i]);
+            maxSum = Math.max(maxSum, currSum);
+        }
+        System.out.println(maxSum);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
@@ -41,6 +54,7 @@ public class MaximumSubarraySum {
         }
 
         maxSum(array);
+        KadanesAlgo(array);
         sc.close();
     }
 }
