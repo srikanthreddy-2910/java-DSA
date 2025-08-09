@@ -1,3 +1,16 @@
+// b) Convert Infix to Postfix
+// 📌 Problem Statement:
+// Given an expression in infix notation (e.g., A + B * C), convert it to its equivalent postfix notation (e.g., A B C * +) using a stack to handle operator precedence and parentheses.
+// Rules:
+
+// Higher precedence operators are placed before lower precedence operators in postfix.
+// Use parentheses to control order in infix.
+
+// Example:
+// Input: "A + B * C"  
+// Output: "A B C * +" code 
+
+import java.util.Scanner;
 import java.util.Stack;
 
 public class InfixToPostfix {
@@ -50,7 +63,8 @@ public class InfixToPostfix {
     }
 
     public static void main(String[] args) {
-        String infix = "( A + B ) * C";
+        Scanner sc = new Scanner(System.in);
+        String infix = sc.nextLine();
         String postfix = infixToPostfix(infix.replaceAll("\\s+", ""));
         System.out.println(postfix);
     }

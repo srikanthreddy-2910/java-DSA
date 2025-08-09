@@ -1,3 +1,16 @@
+//  Evaluate Postfix Expression (Reverse Polish Notation)
+// 📌 Problem Statement:
+// You are given a mathematical expression in postfix notation (Reverse Polish Notation), where operands are integers and operators are one of +, -, *, /. The expression is given as a list of tokens.
+// Your task is to evaluate the expression and return the result.
+// Operands are pushed onto a stack.
+// Operators pop operands from the stack, perform the operation, and push the result back.
+
+// Example:
+// Input: ["2", "1", "+", "3", "*"]  
+// Output: 9  
+// Explanation: (2 + 1) * 3 = 9 sol
+
+import java.util.Scanner;
 import java.util.Stack;
 
 public class PostfixEvaluation {
@@ -36,7 +49,9 @@ public class PostfixEvaluation {
     }
 
     public static void main(String[] args) {
-        String[] tokens = { "2", "1", "+", "3", "*" };
+        Scanner sc= new Scanner(System.in);
+        String str=sc.nextLine();
+        String[] tokens = str.split(" ");
         System.out.println(evalRPN(tokens));
     }
 }
